@@ -1,5 +1,6 @@
 package com.mycompany.firstproyect;
 import javax.swing.JFrame;
+import java.util.*;
 /**
  *
  * @author NSFW TEAM
@@ -8,20 +9,22 @@ import javax.swing.JFrame;
 public class Main {
     
     public static void main(String[] args){
+        
         boolean user = false;
-        usuarioClase user1= new usuarioClase("Angel","password123");
-        user1.setUsername("juanito");
-        //user1.setUserName("Francisco");
+        HashMap mapaUsuarios = new HashMap();
+        usuarioClase user1= new usuarioClase("Angel","password123","20673437k");
         
         if (!user){
             //Register
-            System.out.println("lol");
             NewJFrame ventana = new NewJFrame();
             ventana.setVisible(true);
-        }    
+        }
+        else{
+            //Aplicacion como tal
+            App app = new App();
+            app.setVisible(true);
+        }
         
-        //System.out.println(user1.getUsername());
-        
-        //user1.callTaxi();
+        System.out.println(user1.getUsername());
     }
 }
