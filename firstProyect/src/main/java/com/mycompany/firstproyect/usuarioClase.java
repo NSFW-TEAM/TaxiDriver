@@ -6,7 +6,7 @@ import javax.swing.JFrame;
     * @author NSFW TEAM
  */
 
-public class usuarioClase{
+public abstract class usuarioClase{
 
     public String getUsername() {
         return username;
@@ -44,7 +44,10 @@ public class usuarioClase{
 }
 
 class ConductorClase extends usuarioClase{
-
+    
+    private float calificación;
+    private int ganancias;
+    
     public void setCalificación(float calificación) {
         this.calificación = calificación;
     }
@@ -56,9 +59,7 @@ class ConductorClase extends usuarioClase{
     public void setAuto(AutoClase auto) {
         this.auto = auto;
     }
-    private float calificación;
-    private int ganancias;
-
+    
     public float getCalificación() {
         return calificación;
     }
@@ -82,6 +83,7 @@ class ConductorClase extends usuarioClase{
 }
 
 class pasajeroClase extends usuarioClase{
+    
     public pasajeroClase(String username, String password, String rut) {
         super(username, password, rut);
     }   
@@ -90,7 +92,7 @@ class pasajeroClase extends usuarioClase{
         System.out.println("estamos trabajando en ello");
     }
     
-    public void puntear(){
+    public void calificar(){
         System.out.println("estamos trabajando en ello");
     }
     
@@ -101,8 +103,10 @@ class pasajeroClase extends usuarioClase{
 
 class adminClase extends usuarioClase{
 
-    public adminClase(String username, String password, String rut) {
+    public adminClase(String username, String password, String rut){
         super(username, password, rut);
     }
+    
+    
     
 }

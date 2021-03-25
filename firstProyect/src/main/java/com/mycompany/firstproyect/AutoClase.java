@@ -11,7 +11,14 @@ package com.mycompany.firstproyect;
  */
 
 public class AutoClase {
-
+    
+    private int capacidad;
+    private String marca;
+    private String color;
+    private String modelo;
+    private String patente;
+    private int añoFab;
+    
     public void setMarca(String marca) {
         this.marca = marca;
     }
@@ -83,10 +90,5 @@ public class AutoClase {
         return capacidad;
     }
     //private boolean[] asientos;
-    private int capacidad;
-    private String marca;
-    private String color;
-    private String modelo;
-    private String patente;
-    private int añoFab;
+
 }
