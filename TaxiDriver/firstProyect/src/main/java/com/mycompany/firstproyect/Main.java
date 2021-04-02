@@ -18,20 +18,26 @@ public class Main {
     
     public static void main(String[] args) throws IOException , CsvException {
         
+        ArrayList <HashMap> listaColecciones= new ArrayList<HashMap>();
         HashMap<String, pasajeroClase> mapaPasajeros = new HashMap<String, pasajeroClase>();
         HashMap<String, ConductorClase> mapaConductor = new HashMap<String, ConductorClase>();
+        HashMap<String, adminClase> mapaAdmin = new HashMap<String, adminClase>();
         File file = new File("Archivos/pasajeros.csv");
         File file2 = new File("Archivos/choferes.csv");
         File file3 = new File("Archivos/autos.csv");
+        File file4 = new File("Archivos/admins.csv");
         BufferedReader lector = new BufferedReader(new FileReader(file));
         BufferedReader lector2 = new BufferedReader(new FileReader(file2));
         BufferedReader lector3 = new BufferedReader(new FileReader(file3));
+        BufferedReader lector4 = new BufferedReader(new FileReader(file4));
         String row;
         String row2;
         String row3;
+        String row4;
         String dato[]= new String[3];
         String dato2[]= new String[5];
         String dato3[]= new String[6];
+        String dato4[]= new String[4];
         
         while((row3 = lector3.readLine())!= null && (row2=lector2.readLine())!=null){
             dato3=row3.split(",");
@@ -40,8 +46,6 @@ public class Main {
             if(dato2[3].equals(dato3[5])){
                     ConductorClase conductor= new ConductorClase(Float.parseFloat(dato2[0]),auto,dato2[1],dato2[2],dato2[3],Integer.parseInt(dato2[4]));
                     mapaConductor.put(conductor.getRut(), conductor);
-                    AutoClase aux= conductor.getAuto();
-                    System.out.println(aux.getModelo());
                 }
         }
         
@@ -52,10 +56,16 @@ public class Main {
                         
         }
         
+        while((row4 = lector4.readLine())!= null){
+            dato4 = row4.split(",");
+            adminClase admin = new adminClase(dato4[0],dato4[1],dato4[3]);
+            mapaAdmin.put(admin.getRut(), admin);
+                        
+        }
         
-        
-        System.out.println(mapaPasajeros.keySet());
-        System.out.println(mapaConductor.keySet());
+        listaColecciones.add(mapaAdmin);
+        listaColecciones.add(mapaConductor);
+        listaColecciones.add(mapaPasajeros);
         
         
         if (true){
