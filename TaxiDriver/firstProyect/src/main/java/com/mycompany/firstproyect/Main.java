@@ -67,6 +67,20 @@ public class Main {
         listaColecciones.add(mapaConductor);
         listaColecciones.add(mapaPasajeros);
         
+        ///Prueba de sistema de pago///
+        ConductorClase pruebaChofer=(ConductorClase)listaColecciones.get(1).get("205421432"); //Se le asigna los datos de un chofer que se encuentra en el archivo.
+        pasajeroClase pruebaPasajero= (pasajeroClase)listaColecciones.get(2).get("20673437k");//Se le asigna los datos de un pasajero que se encuentra en el archivo.
+        pruebaPasajero.setClaveTarjeta(1234); //Se le asigna una clave a la tarjeta del pasajero
+        pruebaPasajero.setSaldo(202500);//Se le asigna un saldo a la tarjeta del pasajero
+        //NOTA: Se prueba de esta manera, porque estamos trabajando en la interfaz grafica.
+        System.out.println("Saldo de la tarjeta del pasajero antes de pagar:"+pruebaPasajero.getSaldo()); //Se muestra el saldo del pasajero antes de pagar.
+        System.out.println("Ganancia del chofer antes de ser pagado:"+pruebaChofer.getGanancias());//Se imprime la ganacia del chofer antes de ser pagado.
+        pruebaPasajero.pagar(2500, pruebaChofer, 1234); //Se usa el metodo pagar mediante tarjeta de credito.
+        System.out.println("Saldo de la tarjeta del pasajero despues de pagar:"+pruebaPasajero.getSaldo());
+        System.out.println("Ganancia del chofer despues de ser pagado:"+pruebaChofer.getGanancias());//Se imprime la ganancia del chofer luego de ser pagado
+        //////////////////////////////
+        
+        
         
         if (true){
             //Register

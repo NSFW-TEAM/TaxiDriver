@@ -1,6 +1,6 @@
 package com.mycompany.firstproyect;
 import javax.swing.JFrame;
-
+import java.io.*;
 /**
  *
     * @author NSFW TEAM
@@ -81,11 +81,34 @@ class ConductorClase extends usuarioClase{
         this.auto = auto;
         this.ganancias = ganancias;
     }
+   
+    
+    
+    
+    public int viaje(int pasajeros){
+       return this.auto.getCapacidad()-pasajeros; 
+       /*Retorna la capacidad del auto, 
+       luego de ser tomado por nuevos pasajeros.
+       */
+    }
+    
+    public String viaje(String enViaje){
+        return enViaje; 
+        /*Retorna un mensaje del conductor, 
+        donde muestra que esta en un viaje, 
+        pero sin pasajeros o haciendo un delivery.
+        */
+    }
+    
+    
     
     
 }
 
 class pasajeroClase extends usuarioClase{
+    
+    private int saldo;
+    private int claveTarjeta;
     
     public pasajeroClase(String username, String password, String rut) {
         super(username, password, rut);
@@ -98,10 +121,64 @@ class pasajeroClase extends usuarioClase{
     public void calificar(){
         System.out.println("estamos trabajando en ello");
     }
-    
-    public void pagar(){
-        System.out.println("estamos trabajando en ello");
+
+    public void setSaldo(int saldo) {
+        this.saldo = saldo;
     }
+
+    public int getSaldo() {
+        return saldo;
+    }
+    
+    public int getClaveTarjeta() {
+        return claveTarjeta;
+    }
+
+    public void setClaveTarjeta(int claveTarjeta) {
+        this.claveTarjeta = claveTarjeta;
+    }
+    
+    public void pagar(int monto, ConductorClase conductor, int clave) throws IOException{
+        
+        if(clave==0000){ //El usuario ingresa la clave de su tarjeta por pantalla y el monto disponible.
+            BufferedReader lector = new BufferedReader( new InputStreamReader( System.in ) );
+            String aux;
+            System.out.println("Ingrese clave de tarjeta");
+            aux = lector.readLine();
+            claveTarjeta = Integer.parseInt(aux);
+            pasajeroClase.this.setClaveTarjeta(claveTarjeta);
+            System.out.println("Ingrese el saldo de tarjeta");
+            aux = lector.readLine(); 
+            saldo = Integer.parseInt(aux);
+            pasajeroClase.this.setSaldo(saldo);         
+        }
+        else{
+            if(clave != pasajeroClase.this.getClaveTarjeta()){
+                System.out.println("ERROR: Clave Incorrecta.");
+                return;
+            }
+            if(monto>pasajeroClase.this.getSaldo()){
+                System.out.println("ERROR: Saldo insuficiente.");
+                return;
+            }
+        }
+        
+        pasajeroClase.this.setSaldo(pasajeroClase.this.getSaldo()-monto);
+        conductor.setGanancias(conductor.getGanancias()+monto);
+             
+    }
+    
+    public void pagar(int monto, ConductorClase conductor){
+        conductor.setGanancias(conductor.getGanancias()+monto);
+        /*
+        este metodo actualiza las ganancias del chofer, 
+        luego de haber sido pagado en efectivo por parte
+        del pasajero.
+        */
+    }
+
+
+
 }
 
 class adminClase extends usuarioClase{
@@ -109,7 +186,17 @@ class adminClase extends usuarioClase{
     public adminClase(String username, String password, String rut){
         super(username, password, rut);
     }
-    
+    public void mostrarConductores(){
+        //Esta funcion mostrara a cada conductor disponible en la zona 
+    }
+
+    public void mostrarPasajeros(){
+        //Esta funcion mostrara a los usuario de la aplicacion 
+    }
+
+    public void penalizarConductor(){
+        //
+    }
     
     
 }
