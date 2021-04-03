@@ -153,12 +153,8 @@ class pasajeroClase extends usuarioClase{
             pasajeroClase.this.setSaldo(saldo);         
         }
         else{
-            if(clave != pasajeroClase.this.getClaveTarjeta()){
-                System.out.println("ERROR: Clave Incorrecta.");
-                return;
-            }
-            if(monto>pasajeroClase.this.getSaldo()){
-                System.out.println("ERROR: Saldo insuficiente.");
+            if(clave != pasajeroClase.this.getClaveTarjeta() || monto>pasajeroClase.this.getSaldo() ){
+                System.out.println("ERROR: Clave Incorrecta o Saldo Insuficiente");
                 return;
             }
         }
