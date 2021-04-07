@@ -75,13 +75,11 @@ public class Main {
         System.out.println("Ganancia del chofer despues de ser pagado:"+pruebaChofer.getGanancias());//Se imprime la ganancia del chofer luego de ser pagado
         //////////////////////////////
         
-        boolean pantallas=true;
+        pantallaPrincipal pantalla1= new pantallaPrincipal();
+        pantalla1.setVisible(true);
         
-        while(pantallas){
-            pantallaPrincipal ventana = new pantallaPrincipal();
-            ventana.setVisible(true);
         
-        }
+        
       
         /*
         

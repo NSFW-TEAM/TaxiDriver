@@ -5,6 +5,8 @@
  */
 package CodigoMain;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Francisco
@@ -12,10 +14,11 @@ package CodigoMain;
 public class ventanaInicioSesion extends javax.swing.JFrame {
 
     /**
-     * Creates new form ventanaInicioSesion
+     * Creates new form ventanaRegistro
      */
     public ventanaInicioSesion() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -27,21 +30,113 @@ public class ventanaInicioSesion extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel2 = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
+        jPasswordField1 = new javax.swing.JPasswordField();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
+
+        jPanel2.setBackground(new java.awt.Color(255, 204, 51));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButton1.setFont(new java.awt.Font("Roboto Condensed", 1, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 204));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CodigoMain/images/boton3.png"))); // NOI18N
+        jButton1.setText("Iniciar sesión");
+        jButton1.setBorder(null);
+        jButton1.setBorderPainted(false);
+        jButton1.setContentAreaFilled(false);
+        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton1.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/CodigoMain/images/boton1pressed.png"))); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 410, 200, 30));
+
+        jTextField1.setBackground(new java.awt.Color(255, 255, 204));
+        jTextField1.setFont(new java.awt.Font("Roboto Condensed", 1, 18)); // NOI18N
+        jTextField1.setForeground(new java.awt.Color(0, 0, 47));
+        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField1.setText("Usuario");
+        jTextField1.setToolTipText("");
+        jTextField1.setActionCommand("<Not Set>");
+        jTextField1.setBorder(null);
+        jTextField1.setName(""); // NOI18N
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 300, 200, 30));
+        jTextField1.getAccessibleContext().setAccessibleName("boton1");
+
+        jPasswordField1.setBackground(new java.awt.Color(255, 255, 204));
+        jPasswordField1.setFont(new java.awt.Font("Roboto Condensed", 1, 18)); // NOI18N
+        jPasswordField1.setForeground(new java.awt.Color(0, 0, 47));
+        jPasswordField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPasswordField1.setText("Contraseña");
+        jPasswordField1.setToolTipText("");
+        jPasswordField1.setBorder(null);
+        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPasswordField1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 360, 200, 30));
+
+        jLabel3.setFont(new java.awt.Font("Roboto Condensed", 1, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 47));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CodigoMain/images/botonChico1.png"))); // NOI18N
+        jLabel3.setText("Inicio de sesión");
+        jLabel3.setFocusable(false);
+        jLabel3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jLabel3.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 250, 90, 30));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CodigoMain/images/logoFinal.png"))); // NOI18N
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 200, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CodigoMain/images/iconoFinal.png"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, 180));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPasswordField1ActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        setVisible(false);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        if(jPasswordField1.getText().equals("1234") && jTextField1.getText().equals("Francisco")){
+            JOptionPane.showMessageDialog(this,"entraste al sistema ctm");
+        }
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -54,7 +149,7 @@ public class ventanaInicioSesion extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -69,6 +164,9 @@ public class ventanaInicioSesion extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(ventanaInicioSesion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -79,5 +177,12 @@ public class ventanaInicioSesion extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPasswordField jPasswordField1;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

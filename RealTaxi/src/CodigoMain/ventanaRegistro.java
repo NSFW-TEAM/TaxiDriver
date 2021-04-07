@@ -14,10 +14,11 @@ import javax.swing.JOptionPane;
 public class ventanaRegistro extends javax.swing.JFrame {
 
     /**
-     * Creates new form ventanaRegistro
+     * Creates new form ventanaInicioSesion
      */
     public ventanaRegistro() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -30,163 +31,126 @@ public class ventanaRegistro extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        botonInicioSesion = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
+        contrasenaTexto2 = new javax.swing.JPasswordField();
+        contrasenaTexto1 = new javax.swing.JPasswordField();
+        jLabel4 = new javax.swing.JLabel();
+        btnRegistrarse = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(4, 3, 50));
+        jPanel1.setBackground(new java.awt.Color(255, 207, 7));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(255, 204, 51));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CodigoMain/images/logoFinal.png"))); // NOI18N
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, -1, -1));
 
-        jButton1.setFont(new java.awt.Font("Roboto Condensed", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 204));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CodigoMain/images/boton3.png"))); // NOI18N
-        jButton1.setText("Iniciar sesión");
-        jButton1.setBorder(null);
-        jButton1.setBorderPainted(false);
-        jButton1.setContentAreaFilled(false);
-        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton1.setPreferredSize(new java.awt.Dimension(200, 30));
-        jButton1.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/CodigoMain/images/boton1pressed.png"))); // NOI18N
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CodigoMain/images/iconoFinal.png"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, 180));
+
+        jLabel3.setFont(new java.awt.Font("Roboto Condensed", 1, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 47));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CodigoMain/images/botonChico1.png"))); // NOI18N
+        jLabel3.setText("Registro");
+        jLabel3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jLabel3.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 210, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("Roboto Condensed", 1, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 47));
+        jLabel5.setText("Confirme su contraseña:");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 380, -1, -1));
+
+        jTextField2.setBackground(new java.awt.Color(255, 255, 204));
+        jTextField2.setFont(new java.awt.Font("Roboto Condensed", 1, 18)); // NOI18N
+        jTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField2.setText("Nombre de Usuario");
+        jTextField2.setBorder(null);
+        jTextField2.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jTextField2ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 240, 200, 30));
+        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 250, 200, 30));
 
-        jTextField1.setBackground(new java.awt.Color(255, 255, 204));
-        jTextField1.setFont(new java.awt.Font("Roboto Condensed", 1, 18)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(51, 51, 51));
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField1.setText("Usuario");
-        jTextField1.setToolTipText("");
-        jTextField1.setActionCommand("<Not Set>");
-        jTextField1.setBorder(null);
-        jTextField1.setName(""); // NOI18N
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        jTextField3.setBackground(new java.awt.Color(255, 255, 204));
+        jTextField3.setFont(new java.awt.Font("Roboto Condensed", 1, 18)); // NOI18N
+        jTextField3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField3.setText("Rut de Usuario");
+        jTextField3.setBorder(null);
+        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 290, 200, 30));
+
+        contrasenaTexto2.setBackground(new java.awt.Color(255, 255, 204));
+        contrasenaTexto2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        contrasenaTexto2.setText("Contraseña");
+        contrasenaTexto2.setActionCommand("<Not Set>");
+        contrasenaTexto2.setBorder(null);
+        contrasenaTexto2.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jPanel1.add(contrasenaTexto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 400, 200, 30));
+        contrasenaTexto2.getAccessibleContext().setAccessibleName("");
+        contrasenaTexto2.getAccessibleContext().setAccessibleDescription("ddssss");
+
+        contrasenaTexto1.setBackground(new java.awt.Color(255, 255, 204));
+        contrasenaTexto1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        contrasenaTexto1.setText("Contraseña");
+        contrasenaTexto1.setActionCommand("<Not Set>");
+        contrasenaTexto1.setBorder(null);
+        contrasenaTexto1.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jPanel1.add(contrasenaTexto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 350, 200, 30));
+
+        jLabel4.setFont(new java.awt.Font("Roboto Condensed", 1, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 47));
+        jLabel4.setText("Cree una contraseña:");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 330, -1, -1));
+
+        btnRegistrarse.setFont(new java.awt.Font("Roboto Condensed", 1, 18)); // NOI18N
+        btnRegistrarse.setForeground(new java.awt.Color(255, 255, 204));
+        btnRegistrarse.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CodigoMain/images/boton3.png"))); // NOI18N
+        btnRegistrarse.setText("Registrarse");
+        btnRegistrarse.setBorder(null);
+        btnRegistrarse.setBorderPainted(false);
+        btnRegistrarse.setContentAreaFilled(false);
+        btnRegistrarse.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnRegistrarse.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/CodigoMain/images/boton1pressed.png"))); // NOI18N
+        btnRegistrarse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                btnRegistrarseActionPerformed(evt);
             }
         });
-        jPanel2.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, 200, 30));
-        jTextField1.getAccessibleContext().setAccessibleName("boton1");
-
-        jPasswordField1.setBackground(new java.awt.Color(255, 255, 204));
-        jPasswordField1.setFont(new java.awt.Font("Roboto Condensed", 1, 18)); // NOI18N
-        jPasswordField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jPasswordField1.setText("Contraseña");
-        jPasswordField1.setToolTipText("");
-        jPasswordField1.setBorder(null);
-        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordField1ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, 200, 30));
-
-        botonInicioSesion.setBackground(new java.awt.Color(0, 0, 0));
-        botonInicioSesion.setFont(new java.awt.Font("Roboto Condensed", 1, 14)); // NOI18N
-        botonInicioSesion.setForeground(new java.awt.Color(4, 3, 50));
-        botonInicioSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CodigoMain/images/botonChico1.png"))); // NOI18N
-        botonInicioSesion.setText("Inicia sesión");
-        botonInicioSesion.setBorderPainted(false);
-        botonInicioSesion.setContentAreaFilled(false);
-        botonInicioSesion.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        botonInicioSesion.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/CodigoMain/images/botonChicoPressed2.png"))); // NOI18N
-        botonInicioSesion.setRolloverEnabled(true);
-        botonInicioSesion.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/CodigoMain/images/botonChicoPressed2.png"))); // NOI18N
-        botonInicioSesion.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        botonInicioSesion.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        botonInicioSesion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonInicioSesionActionPerformed(evt);
-            }
-        });
-        jPanel2.add(botonInicioSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, 90, 30));
-
-        jButton3.setFont(new java.awt.Font("Roboto Condensed", 1, 14)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(4, 3, 50));
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CodigoMain/images/botonChico1.png"))); // NOI18N
-        jButton3.setText("Registrate");
-        jButton3.setBorderPainted(false);
-        jButton3.setContentAreaFilled(false);
-        jButton3.setFocusPainted(false);
-        jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton3.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/CodigoMain/images/botonChicoPressed2.png"))); // NOI18N
-        jButton3.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/CodigoMain/images/botonChicoPressed2.png"))); // NOI18N
-        jButton3.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jButton3.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 80, 90, 30));
-
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 174, 310, 340));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CodigoMain/images/logoFinal.png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, -1, -1));
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CodigoMain/images/iconoFinal.png"))); // NOI18N
-        jLabel2.setText("jLabel2");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 310, 180));
+        jPanel1.add(btnRegistrarse, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 440, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        if(jPasswordField1.getText().equals("1234") && jTextField1.getText().equals("Francisco")){
-            JOptionPane.showMessageDialog(this,"entraste al sistema ctm");
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2ActionPerformed
+
+    private void btnRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarseActionPerformed
+        if(contrasenaTexto1.getText().equals(contrasenaTexto2.getText())==false){
+            JOptionPane.showMessageDialog(this, "Las contraseñas no son iguales");
         }
-        
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
-    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordField1ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void botonInicioSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonInicioSesionActionPerformed
-        
-            
-        
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonInicioSesionActionPerformed
+// TODO add your handling code here:
+    }//GEN-LAST:event_btnRegistrarseActionPerformed
 
     /**
      * @param args the command line arguments
@@ -214,6 +178,7 @@ public class ventanaRegistro extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(ventanaRegistro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -224,14 +189,16 @@ public class ventanaRegistro extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botonInicioSesion;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton btnRegistrarse;
+    private javax.swing.JPasswordField contrasenaTexto1;
+    private javax.swing.JPasswordField contrasenaTexto2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
 }
